@@ -80,6 +80,7 @@ const MainHeader = () => {
             alt="afgphotographers logo"
             width={220}
             height={63}
+            priority
           />
         </Link>
         <nav
