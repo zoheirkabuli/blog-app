@@ -1,18 +1,134 @@
-html,
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../assets/fonts/eot/iranyekanwebbold.eot");
+  src: url("../assets/fonts/eot/iranyekanwebbold.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebbold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebbold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/fonts/eot/iranyekanwebthin.eot");
+  src: url("../assets/fonts/eot/iranyekanwebthin.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebthin.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebthin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/eot/iranyekanweblight.eot");
+  src: url("../assets/fonts/eot/iranyekanweblight.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanweblight.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanweblight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/eot/iranyekanwebregular.eot");
+  src: url("../assets/fonts/eot/iranyekanwebregular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebregular.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebregular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/eot/iranyekanwebmedium.eot");
+  src: url("../assets/fonts/eot/iranyekanwebmedium.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebmedium.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebmedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/eot/iranyekanwebextrabold.eot");
+  src: url("../assets/fonts/eot/iranyekanwebextrabold.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebextrabold.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebextrabold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/fonts/eot/iranyekanwebblack.eot");
+  src: url("../assets/fonts/eot/iranyekanwebblack.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebblack.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebblack.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 950;
+  src: url("../assets/fonts/eot/iranyekanwebextrablack.eot");
+  src: url("../assets/fonts/eot/iranyekanwebextrablack.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-8 */ url("../assets/fonts/woff/iranyekanwebextrablack.woff")
+      format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("../assets/fonts/ttf/iranyekanwebextrablack.ttf") format("truetype");
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1.6rem;
+  font-family: iranyekan, sans-serif;
+  background-color: #fafafa;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
