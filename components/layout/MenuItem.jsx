@@ -7,7 +7,14 @@ const MenuItem = ({ title, path }) => {
   const { pathname } = useRouter();
 
   return (
-    <li>
+    <li
+      css={{
+        "@media screen and (max-width:768px)": {
+          width: "100%",
+          display: "flex",
+        },
+      }}
+    >
       <Link
         href={path}
         css={(theme) => ({
@@ -33,6 +40,16 @@ const MenuItem = ({ title, path }) => {
                 width: "100%",
               },
             },
+          },
+
+          "@media screen and (max-width:768px)": {
+            width: "100%",
+            textAlign: "center",
+            padding: "1rem",
+            borderRadius: "1rem",
+            border: `1px solid ${theme.colors.primary}`,
+            color: pathname === path ? "white" : theme.colors.body,
+            backgroundColor: pathname === path ? theme.colors.primary : "white",
           },
         })}
       >
