@@ -13,22 +13,18 @@ const Post = ({ post }) => {
 export const getStaticPaths = async () => {
   const { data } = await client.query({
     query: gql`
-      query Posts {
+      query AllSlugs {
         posts {
-          edges {
-            node {
-              slug
-            }
-          }
+          slug
         }
       }
     `,
   });
 
   return {
-    paths: data.posts.edges.map((post) => ({
+    paths: data.posts.map((post) => ({
       params: {
-        postSlug: decodeURI(post.node.slug),
+        postSlug: post.slug,
       },
     })),
     fallback: false,
@@ -40,14 +36,14 @@ export const getStaticProps = async (ctx) => {
 
   const { data } = await client.query({
     query: gql`
-      query Post {
-        post(id: "${decodeURI(slug)}", idType: SLUG) {
-          id
+      query PostByUrl {
+        post(where: { slug: "${slug}" }) {
           title
+          content {
+            markdown
+          }
           featuredImage {
-            node {
-              sourceUrl
-            }
+            url
           }
         }
       }
@@ -58,7 +54,7 @@ export const getStaticProps = async (ctx) => {
     props: {
       post: {
         title: data.post.title,
-        image: data.post.featuredImage.node.sourceUrl,
+        image: data.post.featuredImage.url,
       },
     },
   };

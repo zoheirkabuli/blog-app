@@ -12,7 +12,7 @@ const defaultOptions = {
 };
 
 const client = new ApolloClient({
-  uri: "http://localhost/site/graphql",
+  uri: process.env.BASE_URL,
   cache: new InMemoryCache(),
   defaultOptions: defaultOptions,
 });

@@ -4,9 +4,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        pathname: "/site/wp-content/uploads/**",
+        protocol: "https",
+        hostname: "media.graphassets.com",
+        pathname: "/**",
       },
     ],
   },
