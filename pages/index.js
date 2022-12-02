@@ -14,6 +14,14 @@ export const getStaticProps = async (context) => {
           id
           slug
           title
+          excerpt
+          featuredImage {
+            url(
+              transformation: {
+                image: { resize: { width: 600, height: 450, fit: scale } }
+              }
+            )
+          }
         }
       }
     `,

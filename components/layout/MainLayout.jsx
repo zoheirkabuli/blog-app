@@ -7,7 +7,16 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <MainHeader />
-      <div css={{ flex: "1 0 0" }}>{children}</div>
+      <div
+        css={{
+          flex: "1 0 0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {children}
+      </div>
       <MainFooter />
     </>
   );

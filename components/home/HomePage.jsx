@@ -1,6 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+
+// component
+import HomeHero from "./HomeHero";
 
 const HomePage = ({ posts }) => {
   return (
@@ -8,11 +12,18 @@ const HomePage = ({ posts }) => {
       <Head>
         <title>خانه | گروه عکاسان افغانستان</title>
       </Head>
-      {posts.map((post) => (
-        <Link key={post.id} href={post.slug}>
-          <h1>{post.title}</h1>
-        </Link>
-      ))}
+      <div
+        css={{
+          width: "95%",
+          maxWidth: "120rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          marginBlock: "3rem",
+        }}
+      >
+        <HomeHero posts={posts.slice(0, 9)} />
+      </div>
     </>
   );
 };
