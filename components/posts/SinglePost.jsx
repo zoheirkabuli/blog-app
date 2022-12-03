@@ -84,7 +84,7 @@ const SinglePost = ({ post }) => {
               },
 
               "& :is(h1, h2, h3, h4, h5, h6)": {
-                margin: "3rem 0 1rem",
+                margin: "2.5rem 0 1rem",
               },
             }}
           />
