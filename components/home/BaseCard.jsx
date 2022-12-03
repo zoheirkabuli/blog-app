@@ -37,6 +37,7 @@ const BaseCard = ({ post }) => {
           width={400}
           height={300}
           alt={post.title}
+          priority
           css={{
             width: "100%",
             aspectRatio: "4/3",
