@@ -13,6 +13,7 @@ const theme = {
     heading: "#0f0f0f",
     meta: "#757575",
     border: "#BDBDBD",
+    bg: "#fafafa",
   },
 };
 
