@@ -18,7 +18,7 @@ export const getStaticProps = async (context) => {
           featuredImage {
             url(
               transformation: {
-                image: { resize: { width: 600, height: 450, fit: scale } }
+                image: { resize: { width: 600, height: 450, fit: clip } }
               }
             )
           }

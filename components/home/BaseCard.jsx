@@ -59,7 +59,7 @@ const BaseCard = ({ post }) => {
           },
         }}
       >
-        <h3 css={{ margin: 0, fontSize: "1.6rem" }}>{post.title}</h3>
+        <h3 css={{ margin: 0, fontSize: "1.8rem" }}>{post.title}</h3>
       </Link>
       <p
         css={{
