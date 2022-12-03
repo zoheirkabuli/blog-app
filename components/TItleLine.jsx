@@ -12,7 +12,13 @@ const TItleLine = ({ title }) => {
         alignSelf: "center",
       }}
     >
-      <div></div>
+      <div
+        css={(theme) => ({
+          flexGrow: 1,
+          height: "0.3rem",
+          backgroundColor: theme.colors.border,
+        })}
+      ></div>
       <h2
         css={(theme) => ({
           margin: 0,
@@ -22,7 +28,13 @@ const TItleLine = ({ title }) => {
       >
         {title}
       </h2>
-      <div></div>
+      <div
+        css={(theme) => ({
+          flexGrow: 1,
+          height: "0.3rem",
+          backgroundColor: theme.colors.border,
+        })}
+      ></div>
     </div>
   );
 };

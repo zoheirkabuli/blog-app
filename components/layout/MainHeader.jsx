@@ -25,6 +25,7 @@ const MainHeader = () => {
         display: "flex",
         justifyContent: "center",
         position: "sticky",
+        top: 0,
         borderBottom: "1px solid #f6f6f6",
         boxShadow: "0 5px 10px 0 #0000000a",
         backgroundColor: "white",
