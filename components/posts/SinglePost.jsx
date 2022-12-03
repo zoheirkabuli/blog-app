@@ -24,6 +24,7 @@ const SinglePost = ({ post }) => {
           width={1280}
           height={720}
           alt={post.title}
+          priority
           css={{
             width: "100%",
             height: "100%",
