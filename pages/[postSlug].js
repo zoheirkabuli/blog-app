@@ -40,7 +40,7 @@ export const getStaticProps = async (ctx) => {
         post(where: { slug: "${slug}" }) {
           title
           content {
-            markdown
+            html
           }
           featuredImage {
             url
@@ -55,6 +55,7 @@ export const getStaticProps = async (ctx) => {
       post: {
         title: data.post.title,
         image: data.post.featuredImage.url,
+        content: data.post.content.html,
       },
     },
   };
