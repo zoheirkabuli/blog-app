@@ -5,6 +5,7 @@ import Link from "next/link";
 
 // component
 import HomeHero from "./HomeHero";
+import HomePosts from "./HomePosts";
 
 const HomePage = ({ posts }) => {
   return (
@@ -18,11 +19,12 @@ const HomePage = ({ posts }) => {
           maxWidth: "120rem",
           display: "flex",
           flexDirection: "column",
-          gap: "2rem",
+          gap: "5rem",
           marginBlock: "3rem",
         }}
       >
         <HomeHero posts={posts.slice(0, 9)} />
+        <HomePosts posts={posts} />
       </div>
     </>
   );
