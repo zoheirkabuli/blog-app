@@ -43,12 +43,7 @@ export const getStaticProps = async (ctx) => {
             markdown
           }
           featuredImage {
-            url(
-              transformation: {
-                image: { resize: { width: 1280 , height: 720, fit: clip } }
-                document: { output: { format: webp } }
-              }
-            )
+            url
           }
         }
       }
