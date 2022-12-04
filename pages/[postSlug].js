@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
         postSlug: post.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -60,7 +60,6 @@ export const getStaticProps = async (ctx) => {
         excerpt: data.post.excerpt,
       },
     },
-    fallback: true,
   };
 };
 
