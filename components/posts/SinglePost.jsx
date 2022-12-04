@@ -88,6 +88,7 @@ const SinglePost = ({ post }) => {
           marginBottom: "2rem",
           "@media screen and (max-width:768px)": {
             flexDirection: "column",
+            gap: 0,
           },
         }}
       >
