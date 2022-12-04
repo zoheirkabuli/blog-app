@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import MenuItem from "./MenuItem";
 
 // images
-import logo from "../../assets/img/logo.webp";
+import logo from "../../assets/img/logos.webp";
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
