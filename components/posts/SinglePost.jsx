@@ -9,6 +9,7 @@ import TableOfContent from "./TableOfContent";
 
 const SinglePost = ({ post }) => {
   const [headings, setHeadings] = useState([]);
+  const [isMobile, setIsMobile] = useState(undefined);
 
   useEffect(() => {
     const headings = document.querySelectorAll(
@@ -20,6 +21,16 @@ const SinglePost = ({ post }) => {
     });
 
     setHeadings(Array.from(headings));
+
+    const updateMobile = () => {
+      setIsMobile(window.innerWidth <= 768 ? true : false);
+    };
+
+    updateMobile();
+    window.addEventListener("resize", updateMobile);
+    return () => {
+      window.removeEventListener("resize", updateMobile);
+    };
   }, []);
 
   return (
@@ -80,16 +91,18 @@ const SinglePost = ({ post }) => {
           },
         }}
       >
-        <div
-          css={{
-            width: "25%",
-            "@media screen and (max-width:768px)": {
-              width: "100%",
-            },
-          }}
-        >
-          {headings.length > 0 && <TableOfContent headings={headings} />}
-        </div>
+        {!isMobile && (
+          <div
+            css={{
+              width: "25%",
+              "@media screen and (max-width:768px)": {
+                width: "100%",
+              },
+            }}
+          >
+            {headings.length > 0 && <TableOfContent headings={headings} />}
+          </div>
+        )}
 
         <div
           css={{
