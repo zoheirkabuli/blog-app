@@ -33,6 +33,14 @@ const SinglePost = ({ post }) => {
     };
   }, []);
 
+  const mobileLinkMaker = (link) => {
+    return (
+      link.slice(0, 30) +
+      "resize=fit:clip,height:300,width:400/" +
+      link.slice(30)
+    );
+  };
+
   return (
     <>
       <Head>
@@ -50,7 +58,7 @@ const SinglePost = ({ post }) => {
         }}
       >
         <Image
-          src={post.image}
+          src={isMobile ? mobileLinkMaker(post.image) : post.image}
           width={1280}
           height={720}
           alt={post.title}
@@ -74,7 +82,9 @@ const SinglePost = ({ post }) => {
               "linear-gradient(180deg, rgba(245,245,245,0.2) 0%, rgba(250,250,250,1) 90%)",
           }}
         >
-          <h1 css={{ margin: 0, fontWeight: "900" }}>{post.title}</h1>
+          <h1 css={{ margin: 0, fontWeight: "900", textAlign: "center" }}>
+            {post.title}
+          </h1>
         </div>
       </div>
 
