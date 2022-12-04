@@ -37,6 +37,7 @@ const SinglePost = ({ post }) => {
     <>
       <Head>
         <title>{`${post.title} | گروه عکاسان افغانستان`}</title>
+        <meta name="description" content={`${post.excerpt}`} />
       </Head>
       <div
         css={{

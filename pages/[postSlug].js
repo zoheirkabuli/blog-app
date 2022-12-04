@@ -45,6 +45,7 @@ export const getStaticProps = async (ctx) => {
           featuredImage {
             url
           }
+          excerpt
         }
       }
     `,
@@ -56,6 +57,7 @@ export const getStaticProps = async (ctx) => {
         title: data.post.title,
         image: data.post.featuredImage.url,
         content: data.post.content.html,
+        excerpt: data.post.excerpt,
       },
     },
   };
