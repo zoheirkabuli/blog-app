@@ -22,8 +22,8 @@ const BlogCard = ({ post }) => {
         <Image
           src={post.featuredImage.url}
           alt={post.title}
-          width={200}
-          height={150}
+          width={120}
+          height={90}
           css={{
             width: "100%",
             aspectRatio: "4/3",
