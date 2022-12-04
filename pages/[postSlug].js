@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-
+import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
@@ -7,6 +7,10 @@ import client from "../apollo-client";
 import SinglePost from "../components/posts/SinglePost";
 
 const Post = ({ post }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <h1>درحال بارگذاری...</h1>;
+  }
   return <SinglePost post={post} />;
 };
 
@@ -60,6 +64,7 @@ export const getStaticProps = async (ctx) => {
         excerpt: data.post.excerpt,
       },
     },
+    revalidate: 1,
   };
 };
 
