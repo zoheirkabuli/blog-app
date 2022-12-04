@@ -1,14 +1,27 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
-
 
 // components
 import SinglePostContent from "./SinglePostContent";
 import TableOfContent from "./TableOfContent";
 
 const SinglePost = ({ post }) => {
+  const [headings, setHeadings] = useState([]);
+
+  useEffect(() => {
+    const headings = document.querySelectorAll(
+      ".article-content :is(h1, h2, h3, h4, h5, h6)"
+    );
+
+    headings.forEach((heading, index) => {
+      heading.setAttribute("id", `${heading.innerText.replace(" ", "-")}`);
+    });
+
+    setHeadings(Array.from(headings));
+  }, []);
+
   return (
     <>
       <Head>
@@ -75,7 +88,7 @@ const SinglePost = ({ post }) => {
             },
           }}
         >
-          <TableOfContent />
+          {headings.length > 0 && <TableOfContent headings={headings} />}
         </div>
 
         <div
