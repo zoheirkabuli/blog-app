@@ -1,7 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+
+
+// components
+import SinglePostContent from "./SinglePostContent";
+import TableOfContent from "./TableOfContent";
 
 const SinglePost = ({ post }) => {
   return (
@@ -62,32 +67,26 @@ const SinglePost = ({ post }) => {
           },
         }}
       >
-        <div css={{ width: "33%" }}></div>
         <div
           css={{
-            width: "66%",
+            width: "25%",
             "@media screen and (max-width:768px)": {
               width: "100%",
             },
           }}
         >
-          <article
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            css={{
-              boxShadow: "0px 4px 4px 0px #21212126",
-              padding: "1rem",
-              borderRadius: "1rem",
-              backgroundColor: "white",
+          <TableOfContent />
+        </div>
 
-              "& p": {
-                margin: "0 0 1rem",
-              },
-
-              "& :is(h1, h2, h3, h4, h5, h6)": {
-                margin: "2.5rem 0 1rem",
-              },
-            }}
-          />
+        <div
+          css={{
+            width: "75%",
+            "@media screen and (max-width:768px)": {
+              width: "100%",
+            },
+          }}
+        >
+          <SinglePostContent content={post.content} />
         </div>
       </div>
     </>
