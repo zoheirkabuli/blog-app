@@ -6,6 +6,7 @@ import Head from "next/head";
 // components
 import SinglePostContent from "./SinglePostContent";
 import TableOfContent from "./TableOfContent";
+import CommentForm from "./CommentForm";
 
 const SinglePost = ({ post }) => {
   const [headings, setHeadings] = useState([]);
@@ -119,12 +120,16 @@ const SinglePost = ({ post }) => {
         <div
           css={{
             width: "75%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "2rem",
             "@media screen and (max-width:768px)": {
               width: "100%",
             },
           }}
         >
           <SinglePostContent content={post.content} />
+          <CommentForm />
         </div>
       </div>
     </>
