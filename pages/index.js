@@ -6,7 +6,7 @@ const index = ({ posts }) => {
   return <HomePage posts={posts} />;
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const { data } = await client.query({
     query: gql`
       query AllPosts {
@@ -31,7 +31,6 @@ export const getStaticProps = async (context) => {
     props: {
       posts: data.posts,
     },
-    revalidate: 10,
   };
 };
 
