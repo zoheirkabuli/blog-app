@@ -131,10 +131,9 @@ const SinglePost = ({ post }) => {
           }}
         >
           <SinglePostContent content={post.content} />
-          <ClientOnly>
-            <CommentForm slug={post.slug} />
-            <CommentsList slug={post.slug} />
-          </ClientOnly>
+
+          <CommentForm slug={post.slug} />
+          <CommentsList slug={post.slug} />
         </div>
       </div>
     </>
