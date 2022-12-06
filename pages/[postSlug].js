@@ -42,6 +42,7 @@ export const getStaticProps = async (ctx) => {
     query: gql`
       query PostByUrl {
         post(where: { slug: "${slug}" }) {
+          slug
           title
           content {
             html
@@ -58,6 +59,7 @@ export const getStaticProps = async (ctx) => {
   return {
     props: {
       post: {
+        slug: data.post.slug,
         title: data.post.title,
         image: data.post.featuredImage.url,
         content: data.post.content.html,

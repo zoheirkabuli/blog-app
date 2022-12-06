@@ -7,6 +7,8 @@ import Head from "next/head";
 import SinglePostContent from "./SinglePostContent";
 import TableOfContent from "./TableOfContent";
 import CommentForm from "./CommentForm";
+import ClientOnly from "../ClientOnly";
+import CommentsList from "./CommentsList";
 
 const SinglePost = ({ post }) => {
   const [headings, setHeadings] = useState([]);
@@ -129,7 +131,10 @@ const SinglePost = ({ post }) => {
           }}
         >
           <SinglePostContent content={post.content} />
-          <CommentForm />
+          <ClientOnly>
+            <CommentForm slug={post.slug} />
+            <CommentsList slug={post.slug} />
+          </ClientOnly>
         </div>
       </div>
     </>

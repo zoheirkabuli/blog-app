@@ -2,6 +2,9 @@ import { ThemeProvider } from "@emotion/react";
 import "normalize.css";
 import "../styles/globals.css";
 
+import { ApolloProvider } from "@apollo/client";
+import client from "../apollo-client";
+
 import MainLayout from "../components/layout/MainLayout";
 
 const theme = {
@@ -19,11 +22,13 @@ const theme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
