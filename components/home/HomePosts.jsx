@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import TItleLine from "../TItleLine";
+import TitleLine from "../TitleLine";
 
 // components
 import BlogCard from "./BlogCard";
@@ -8,7 +8,7 @@ import BlogCard from "./BlogCard";
 const HomePosts = ({ posts }) => {
   return (
     <div css={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-      <TItleLine title={"مطالب جدید"} />
+      <TitleLine title={"مطالب جدید"} />
       <div
         css={{
           display: "grid",

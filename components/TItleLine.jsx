@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 
-const TItleLine = ({ title }) => {
+const TitleLine = ({ title }) => {
   return (
     <div
       css={{
@@ -39,4 +39,4 @@ const TItleLine = ({ title }) => {
   );
 };
 
-export default TItleLine;
+export default TitleLine;
