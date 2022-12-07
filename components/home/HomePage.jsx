@@ -12,6 +12,10 @@ const HomePage = ({ posts }) => {
     <>
       <Head>
         <title>خانه | گروه عکاسان افغانستان</title>
+        <meta
+          name="description"
+          content="گروه عکاسان افغانستان | اخبار روز عکاسی و عکاسان"
+        />
       </Head>
       <div
         css={{
