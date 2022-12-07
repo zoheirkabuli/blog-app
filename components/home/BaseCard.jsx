@@ -1,9 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 
 const BaseCard = ({ post }) => {
+  const [isMobile, setIsMobile] = useState(undefined);
+
+  useEffect(() => {
+    const updateMobile = () => {
+      setIsMobile(window.innerWidth <= 768 ? true : false);
+    };
+
+    updateMobile();
+    window.addEventListener("resize", updateMobile);
+    return () => {
+      window.removeEventListener("resize", updateMobile);
+    };
+  }, []);
+
   return (
     <div
       css={(theme) => ({
@@ -34,8 +48,8 @@ const BaseCard = ({ post }) => {
       >
         <Image
           src={post.featuredImage.url}
-          width={400}
-          height={300}
+          width={isMobile ? 120 : 400}
+          height={isMobile ? 90 : 300}
           alt={post.title}
           priority
           css={{
