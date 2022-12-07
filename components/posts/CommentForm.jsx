@@ -257,6 +257,10 @@ const CommentForm = ({ slug }) => {
             fontWeight: "bold",
             alignSelf: "flex-start",
             cursor: "pointer",
+            transition: "color 0.25s",
+            "&:hover": {
+              backgroundColor: "#bd9b2d",
+            },
             "@media screen and (max-width:768px)": {
               alignSelf: "stretch",
             },
