@@ -30,7 +30,7 @@ const CommentsList = ({ slug }) => {
     };
 
     loadApi();
-  }, []);
+  }, [loadComments]);
 
   if (error) {
     console.error(error);
