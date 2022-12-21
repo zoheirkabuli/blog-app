@@ -61,10 +61,8 @@ const SinglePost = ({ post }) => {
         }}
       >
         <Image
-          src={isMobile ? mobileLinkMaker(post.image) : post.image}
-          width={isMobile ? 600 : 1280}
-          height={isMobile ? 338 : 720}
-          alt={post.title}
+          {...post.image}
+          placeholder="blur"
           priority
           css={{
             width: "100%",

@@ -87,12 +87,23 @@ const CommentsList = ({ slug }) => {
             css={{ width: "10rem", display: "flex" }}
           />
         </div>
-      ) : (
+      ) : comments.length > 0 ? (
         <div css={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           {comments.map((comment) => (
             <Comment key={comment.id} comment={comment} />
           ))}
         </div>
+      ) : (
+        <p css={{ margin: 0, textAlign: "center" }}>
+          هیچ نظری وحود ندارد. اولین نفر باشید که{" "}
+          <a
+            href="#send-comment"
+            css={(theme) => ({ color: theme.colors.primary })}
+          >
+            نظر
+          </a>{" "}
+          می‌دهد
+        </p>
       )}
     </div>
   );
