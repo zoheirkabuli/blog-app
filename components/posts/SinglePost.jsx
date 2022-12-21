@@ -61,8 +61,12 @@ const SinglePost = ({ post }) => {
         }}
       >
         <Image
-          {...post.image}
+          src={isMobile ? mobileLinkMaker(post.image.src) : post.image.src}
+          blurDataURL={post.image.blurDataURL}
           placeholder="blur"
+          width={isMobile ? 600 : 1280}
+          height={isMobile ? 338 : 720}
+          alt={post.title}
           priority
           css={{
             width: "100%",
