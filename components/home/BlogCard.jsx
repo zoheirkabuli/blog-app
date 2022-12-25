@@ -20,8 +20,8 @@ const BlogCard = ({ post }) => {
     >
       <Link href={`/${post.slug}`} css={{ display: "flex", width: "30%" }}>
         <Image
-          src={post.featuredImage.url}
-          alt={post.title}
+          {...post.featuredImage}
+          placeholder="blur"
           width={120}
           height={90}
           css={{
