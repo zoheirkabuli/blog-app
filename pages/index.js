@@ -4,7 +4,7 @@ import HomePage from "../components/home/HomePage";
 import { getPlaiceholder } from "plaiceholder";
 
 const index = ({ posts }) => {
-  return <h1>Hello</h1>;
+  return <HomePage posts={posts} />;
 };
 
 export const getServerSideProps = async (context) => {
