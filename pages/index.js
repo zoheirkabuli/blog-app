@@ -28,21 +28,24 @@ export const getServerSideProps = async (context) => {
     `,
   });
 
-  const images = [];
+  const posts = [...data.posts];
 
-  for (const post of data.posts) {
-    images.push(await getPlaiceholder(post.featuredImage.url));
+  for (let index = 0; index < posts.length; index++) {
+    const { img, base64 } = await getPlaiceholder(
+      posts[index].featuredImage.url
+    );
+    posts[index] = {
+      id: posts[index].id,
+      slug: posts[index].slug,
+      title: posts[index].title,
+      excerpt: posts[index].excerpt,
+      featuredImage: { ...img, blurDataURL: base64 },
+    };
   }
 
   return {
     props: {
-      posts: data.posts.map((post, index) => ({
-        ...post,
-        featuredImage: {
-          ...images[index].img,
-          blurDataURL: images[index].base64,
-        },
-      })),
+      posts: posts,
     },
   };
 };
