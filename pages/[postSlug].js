@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import { getPlaiceholder } from "plaiceholder";
 
 // component
 import SinglePost from "../components/posts/SinglePost";
@@ -11,6 +12,7 @@ const Post = ({ post }) => {
   if (router.isFallback) {
     return <h1>درحال بارگذاری...</h1>;
   }
+
   return <SinglePost post={post} />;
 };
 
@@ -56,15 +58,19 @@ export const getStaticProps = async (ctx) => {
     `,
   });
 
+  const finalPost = {
+    slug: data.post.slug,
+    title: data.post.title,
+    image: await getPlaiceholder(data.post.featuredImage.url),
+    content: data.post.content.html,
+    excerpt: data.post.excerpt,
+  };
+
+  console.log(finalPost);
+
   return {
     props: {
-      post: {
-        slug: data.post.slug,
-        title: data.post.title,
-        image: data.post.featuredImage.url,
-        content: data.post.content.html,
-        excerpt: data.post.excerpt,
-      },
+      post: finalPost,
     },
     revalidate: 1,
   };
