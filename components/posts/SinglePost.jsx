@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
-import { keyframes } from "@emotion/react";
 
 // components
 import SinglePostContent from "./SinglePostContent";
@@ -10,18 +9,6 @@ import TableOfContent from "./TableOfContent";
 import CommentForm from "./CommentForm";
 import ClientOnly from "../ClientOnly";
 import CommentsList from "./CommentsList";
-
-const blur = keyframes`
-  0%{
-    filter: blur(15px);
-  }
-
-
-  100%{
-    filter: blur(0px);
-  }
-
-`;
 
 const SinglePost = ({ post }) => {
   const [headings, setHeadings] = useState([]);
@@ -74,20 +61,15 @@ const SinglePost = ({ post }) => {
         }}
       >
         <Image
-          src={
-            isMobile ? mobileLinkMaker(post.image.img.src) : post.image.img.src
-          }
+          src={isMobile ? mobileLinkMaker(post.image) : post.image}
           width={isMobile ? 600 : 1280}
           height={isMobile ? 338 : 720}
-          placeholder="blur"
-          blurDataURL={post.image.base64}
           alt={post.title}
           priority
           css={{
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            animation: `${blur} 1s`,
           }}
         />
 
