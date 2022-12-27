@@ -47,8 +47,9 @@ const BaseCard = ({ post }) => {
         }}
       >
         <Image
-          {...post.featuredImage}
-          placeholder="blur"
+          src={post.featuredImage.url}
+          width={isMobile ? 120 : 400}
+          height={isMobile ? 90 : 300}
           alt={post.title}
           priority
           css={{

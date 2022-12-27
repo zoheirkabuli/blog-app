@@ -105,7 +105,6 @@ const CommentForm = ({ slug }) => {
       </div>
 
       <h2
-        id="send-comment"
         css={(theme) => ({
           margin: 0,
           fontSize: "1.6rem",
@@ -258,7 +257,7 @@ const CommentForm = ({ slug }) => {
             fontWeight: "bold",
             alignSelf: "flex-start",
             cursor: "pointer",
-            transition: "background-color 0.25s",
+            transition: "color 0.25s",
             "&:hover": {
               backgroundColor: "#bd9b2d",
             },

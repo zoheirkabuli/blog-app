@@ -2,7 +2,6 @@
 import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
-import { getPlaiceholder } from "plaiceholder";
 
 // component
 import SinglePost from "../components/posts/SinglePost";
@@ -57,14 +56,12 @@ export const getStaticProps = async (ctx) => {
     `,
   });
 
-  const { base64, img } = await getPlaiceholder(data.post.featuredImage.url);
-
   return {
     props: {
       post: {
         slug: data.post.slug,
         title: data.post.title,
-        image: { ...img, blurDataURL: base64 },
+        image: data.post.featuredImage.url,
         content: data.post.content.html,
         excerpt: data.post.excerpt,
       },
