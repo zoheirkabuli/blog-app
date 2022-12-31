@@ -1,5 +1,4 @@
 import Document, { Html, Main, NextScript, Head } from "next/document";
-import { useRouter } from "next/router";
 
 class MyDocument extends Document {
   render() {
