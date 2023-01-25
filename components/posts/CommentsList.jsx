@@ -18,19 +18,9 @@ const GET_COMMENTS = gql`
 `;
 
 const CommentsList = ({ slug }) => {
-  const [comments, setComments] = useState([]);
-  const [loadComments, { error, loading }] = useLazyQuery(GET_COMMENTS, {
+  const { data, error, loading } = useQuery(GET_COMMENTS, {
     variables: { slug: slug },
   });
-
-  useEffect(() => {
-    const loadApi = async () => {
-      const { data } = await loadComments();
-      setComments(data.comments);
-    };
-
-    loadApi();
-  }, [loadComments]);
 
   if (error) {
     console.error(error);
@@ -60,15 +50,15 @@ const CommentsList = ({ slug }) => {
         })}
       >
         نظرات{" "}
-        {!loading && loading !== undefined && (
+        {!loading && (
           <span
             css={(theme) => ({ fontSize: "1.2rem", color: theme.colors.meta })}
           >
-            ({comments.length} نظر)
+            ({data.comments.length} نظر)
           </span>
         )}
       </h2>
-      {loading && loading !== undefined ? (
+      {loading ? (
         <div
           css={{
             position: "absolute",
@@ -89,7 +79,7 @@ const CommentsList = ({ slug }) => {
         </div>
       ) : (
         <div css={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          {comments.map((comment) => (
+          {data.comments.map((comment) => (
             <Comment key={comment.id} comment={comment} />
           ))}
         </div>

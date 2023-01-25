@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -7,7 +7,6 @@ import Head from "next/head";
 import SinglePostContent from "./SinglePostContent";
 import TableOfContent from "./TableOfContent";
 import CommentForm from "./CommentForm";
-import ClientOnly from "../ClientOnly";
 import CommentsList from "./CommentsList";
 
 const SinglePost = ({ post }) => {
@@ -131,7 +130,6 @@ const SinglePost = ({ post }) => {
           }}
         >
           <SinglePostContent content={post.content} />
-
           <CommentForm slug={post.slug} />
           <CommentsList slug={post.slug} />
         </div>
