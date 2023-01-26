@@ -60,7 +60,11 @@ const SinglePost = ({ post }) => {
         }}
       >
         <Image
-          src={isMobile ? mobileLinkMaker(post.image) : post.image}
+          src={
+            isMobile
+              ? mobileLinkMaker(post.image.photo.src)
+              : post.image.photo.src
+          }
           width={isMobile ? 600 : 1280}
           height={isMobile ? 338 : 720}
           alt={post.title}
@@ -70,6 +74,8 @@ const SinglePost = ({ post }) => {
             height: "100%",
             objectFit: "cover",
           }}
+          placeholder="blur"
+          blurDataURL={post.image.base64}
         />
 
         <div

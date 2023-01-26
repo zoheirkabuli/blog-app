@@ -3,6 +3,7 @@ const { withPlaiceholder } = require("@plaiceholder/next");
 
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   env: {
     BASE_URL: process.env.BASE_URL,
   },

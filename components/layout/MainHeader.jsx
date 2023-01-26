@@ -83,6 +83,7 @@ const MainHeader = () => {
             width={220}
             height={63}
             priority
+            placeholder="blur"
           />
         </Link>
         <nav
